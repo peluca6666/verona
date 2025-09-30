@@ -55,3 +55,9 @@ export function saveToken(token: string) {
 export function getToken(): string | null {
     return localStorage.getItem('verona_token');
 }
+
+// function to get product by id
+export async function getProductById(id: string) {
+    const response = await apiRequest<{ success: boolean, data: Product }>(`/products/${id}`);
+    return response.data;
+}

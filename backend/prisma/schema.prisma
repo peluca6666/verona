@@ -31,6 +31,7 @@ model product {
   name          String   @db.VarChar(256)
   price         Int
   description   String?  @db.Text
+  material      String?  @db.VarChar(256)
   slug          String?  @db.VarChar(256)
   primary_image String   @db.VarChar(256)
   images        Json?  

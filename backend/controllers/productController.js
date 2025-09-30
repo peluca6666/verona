@@ -1,6 +1,31 @@
 import productService from "../services/productService.js";
 
 class ProductController {
+
+async getProductById(req, res) {
+    try {
+        const result = await productService.getProductById(req.params.id);  
+        console.log('Product fetched:', result.name);    
+        res.status(200).json({
+            success: true,
+            data: result
+        });
+    } catch (error) {
+        console.error('Error in getProductById:', error.message);
+        
+        if (error.message.includes('not found')) {
+            return res.status(404).json({ 
+                success: false, 
+                message: 'Product not found' 
+            });
+        }
+        
+        res.status(500).json({ 
+            success: false, 
+            message: 'Could not fetch product' 
+        });
+    }
+}
     async getProducts(_, res) {
         try {
             const result = await productService.getAllActiveProducts();  

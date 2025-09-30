@@ -4,6 +4,28 @@ import { updateProductSchema, createProductSchema} from "../schemas/productSchem
 const prisma = new PrismaClient();
 
 class ProductService {
+async getProductById(id) {
+    try {
+        const product = await prisma.product.findUnique({
+            where: { 
+                id: parseInt(id),
+                is_active: true
+            },
+            include: {
+                category: true
+            }
+        });
+
+        if (!product) {
+            throw new Error('Product not found');
+        }
+
+        return product;
+    } catch (error) {
+        console.error('Error fetching product by id:', error.message);
+        throw error;
+    }
+}
     async getAllActiveProducts() {
         try {
             const products = await prisma.product.findMany({
@@ -54,6 +76,7 @@ class ProductService {
                     primary_image: validatedData.primary_image || '',
                     is_active: validatedData.is_active ?? true,
                     images: validatedData.images || [],
+                    material: validatedData.material || '',
                     category_id: validatedData.category_id,
                     created_at: new Date(),
                     updated_at: new Date()
