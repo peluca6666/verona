@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <div>
       <main>
-           <Header />
-      <Hero />
-      <CategoryGrid />
-      <FeaturedProducts />
-      <Footer />
+        <Header />
+        <Hero />
+        <CategoryGrid />
+        <FeaturedProducts />
+        <Footer />
       </main>
     </div>
   );

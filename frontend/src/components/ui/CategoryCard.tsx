@@ -9,7 +9,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   const defaultImage = 'https://imgs.search.brave.com/51-1XG__jPeNRMb7YMT0hBrLoFqbrBSv1UBAWkJCGis/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2VkL2Y5/LzYzL2VkZjk2MzZm/ZGUzMDA0YzM2MGIx/ZjM4MGNiYmZkYmU2/LmpwZw';
 
   return (
-    <Link href={`/categoria/${category.id}`} className="group block">
+   <Link href={`/catalog?category=${category.id}`} className="group block">
       <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1">
         <div className="aspect-[4/5] relative overflow-hidden">
           <img 

@@ -61,6 +61,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="group relative">
+            <a href="/">
             <h1 
               className="text-2xl sm:text-3xl lg:text-4xl font-thin tracking-[0.15em] sm:tracking-[0.25em] group-hover:text-amber-600 transition-all duration-500 relative"
               style={{ 
@@ -80,7 +81,9 @@ export default function Header() {
             >
               JOYAS
             </div>
+            </a>
           </div>
+          
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
