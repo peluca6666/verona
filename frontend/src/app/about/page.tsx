@@ -37,7 +37,7 @@ export default function About() {
                             <p className="text-gray-700 leading-relaxed text-base">
                                 Verona Joyas es un pequeño emprendimiento que se inauguró un 16 de septiembre de 2024 en Villa del Dique.
                                 A medida de que pasaba el tiempo, nuestro negocio era mas conocido y nos alegra decir que ahora trabajamos en distintas zonas de todo Calamuchita. Por el momento trabajamos solo con
-                                **tienda online** coordinando entregas, pero trabajaremos duro para tener nuestro espacio físico 🤍
+                                tienda online coordinando entregas, pero trabajaremos duro para tener nuestro espacio físico 🤍
                             </p>
                         </div>
 
