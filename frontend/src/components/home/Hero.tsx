@@ -44,7 +44,7 @@ export default function Hero() {
         
         {/* Main Heading */}
         <h1 
-          className="text-7xl sm:text-8xl md:text-9xl font-thin text-amber-300 tracking-[0.25em] leading-none mb-8"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-thin text-amber-300 tracking-[0.25em] leading-none mb-8"
           style={{ 
             fontFamily: 'Playfair Display, serif',
           }}

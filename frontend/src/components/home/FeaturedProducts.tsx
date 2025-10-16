@@ -44,7 +44,7 @@ export default function FeaturedProducts() {
       <div className="container mx-auto px-4 sm:px-12">
         <div className="text-center mb-12 sm:mb-16">
           <h2
-            className="text-3xl sm:text-5xl font-thin text-gray-900 tracking-[0.1em] mb-4 sm:mb-6"
+            className="text-3xl sm:text-5xl font-thin text-gray-900 tracking-[0.1em] mb-4 mt-5 sm:mb-6"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             PRODUCTOS DESTACADOS
