@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptJS';
+import bcrypt from 'bcryptjs';
 
 class BcryptUtils {
     //Method for hashing password
