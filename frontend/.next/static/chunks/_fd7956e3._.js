@@ -17,84 +17,130 @@ function CategoryCard(param) {
         href: "/catalog?category=".concat(category.id),
         className: "group block",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "aspect-[4/5] relative overflow-hidden",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                        src: category.image || defaultImage,
-                        alt: category.name,
-                        className: "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                        lineNumber: 15,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                        lineNumber: 20,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute bottom-0 left-0 right-0 p-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-lg font-light text-white tracking-[0.15em] mb-2 group-hover:text-amber-200 transition-colors duration-300",
-                                style: {
-                                    fontFamily: 'Playfair Display, serif'
-                                },
-                                children: category.name.toUpperCase()
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                                lineNumber: 24,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-amber-200/90 text-xs font-medium tracking-[0.1em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-                                        children: "Explorar"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                                        lineNumber: 32,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "ml-2 w-0 group-hover:w-12 h-px bg-gradient-to-r from-amber-300/80 via-amber-200 to-transparent transition-all duration-700 ease-out"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                                        lineNumber: 37,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                                lineNumber: 31,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                        lineNumber: 23,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                        lineNumber: 42,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/ui/CategoryCard.tsx",
-                lineNumber: 14,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
+            className: "relative h-[400px] overflow-visible",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "relative h-full bg-white overflow-hidden transition-all duration-500 ease-out group-hover:-translate-y-6 group-hover:shadow-2xl shadow-lg",
+                    style: {
+                        transform: 'skewX(-10deg)'
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute inset-0",
+                            style: {
+                                transform: 'skewX(10deg) scale(1.2)'
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                    src: category.image || defaultImage,
+                                    alt: category.name,
+                                    className: "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                                    lineNumber: 28,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                                    lineNumber: 33,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                            lineNumber: 22,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute bottom-0 left-0 right-0 p-8 z-10",
+                            style: {
+                                transform: 'skewX(10deg)'
+                            },
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    className: "text-2xl font-light text-white tracking-[0.2em] mb-3 group-hover:text-amber-300 transition-colors duration-300",
+                                    style: {
+                                        fontFamily: 'Playfair Display, serif'
+                                    },
+                                    children: category.name.toUpperCase()
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                                    lineNumber: 43,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-amber-300 text-sm font-medium tracking-[0.15em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0",
+                                            children: "Explorar"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                                            lineNumber: 51,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                            className: "w-5 h-5 ml-2 text-amber-300 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0",
+                                            fill: "none",
+                                            stroke: "currentColor",
+                                            viewBox: "0 0 24 24",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                                strokeLinecap: "round",
+                                                strokeLinejoin: "round",
+                                                strokeWidth: 2,
+                                                d: "M17 8l4 4m0 0l-4 4m4-4H3"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                                                lineNumber: 61,
+                                                columnNumber: 17
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                                            lineNumber: 55,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                                    lineNumber: 50,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                            lineNumber: 37,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none",
+                            style: {
+                                transform: 'skewX(10deg) translateX(-100%)'
+                            }
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                            lineNumber: 67,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                    lineNumber: 15,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute inset-0 bg-black/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10",
+                    style: {
+                        transform: 'translateY(15px) skewX(-10deg)'
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/CategoryCard.tsx",
+                    lineNumber: 76,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/components/ui/CategoryCard.tsx",
             lineNumber: 13,
             columnNumber: 7
@@ -102,7 +148,7 @@ function CategoryCard(param) {
     }, void 0, false, {
         fileName: "[project]/src/components/ui/CategoryCard.tsx",
         lineNumber: 12,
-        columnNumber: 4
+        columnNumber: 5
     }, this);
 }
 _c = CategoryCard;
@@ -483,24 +529,32 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 __turbopack_context__.s([
     "apiRequest",
     ()=>apiRequest,
+    "createProduct",
+    ()=>createProduct,
+    "deleteProduct",
+    ()=>deleteProduct,
     "getCategories",
     ()=>getCategories,
     "getProductById",
     ()=>getProductById,
     "getProducts",
     ()=>getProducts,
+    "getProductsForAdmin",
+    ()=>getProductsForAdmin,
     "getToken",
     ()=>getToken,
     "login",
     ()=>login,
     "saveToken",
-    ()=>saveToken
+    ()=>saveToken,
+    "updateProduct",
+    ()=>updateProduct
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var _process_env_NEXT_PUBLIC_API_URL;
 const API_BASE = (_process_env_NEXT_PUBLIC_API_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api")) === null || _process_env_NEXT_PUBLIC_API_URL === void 0 ? void 0 : _process_env_NEXT_PUBLIC_API_URL.replace('/api', '');
 const API_URL = "".concat(API_BASE, "/api");
-const AUTH_URL = "".concat(API_BASE, "/auth");
+const AUTH_URL = "".concat(API_BASE, "/api/auth");
 async function apiRequest(endpoint) {
     const url = "".concat(API_URL).concat(endpoint);
     const response = await fetch(url);
@@ -544,6 +598,63 @@ function getToken() {
 async function getProductById(id) {
     const response = await apiRequest("/products/".concat(id));
     return response.data;
+}
+async function getProductsForAdmin() {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin"), {
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Error fetching products');
+    }
+    return response.json();
+}
+async function createProduct(data) {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin"), {
+        method: 'POST',
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error('Error creating product');
+    }
+    return response.json();
+}
+async function updateProduct(id, data) {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin/").concat(id), {
+        method: 'PUT',
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error('Error updating product');
+    }
+    return response.json();
+}
+async function deleteProduct(id) {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin/").concat(id), {
+        method: 'DELETE',
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Error deleting product');
+    }
+    return response.json();
 }
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
@@ -847,125 +958,130 @@ __turbopack_context__.s([
     ()=>Hero
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$ScrollIndicator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/ScrollIndicator.tsx [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
 ;
 ;
 function Hero() {
+    _s();
+    const [isLoaded, setIsLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [mousePosition, setMousePosition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        x: 0,
+        y: 0
+    });
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Hero.useEffect": ()=>{
+            setIsLoaded(true);
+            const handleMouseMove = {
+                "Hero.useEffect.handleMouseMove": (e)=>{
+                    setMousePosition({
+                        x: (e.clientX / window.innerWidth - 0.5) * 20,
+                        y: (e.clientY / window.innerHeight - 0.5) * 20
+                    });
+                }
+            }["Hero.useEffect.handleMouseMove"];
+            window.addEventListener('mousemove', handleMouseMove);
+            return ({
+                "Hero.useEffect": ()=>window.removeEventListener('mousemove', handleMouseMove)
+            })["Hero.useEffect"];
+        }
+    }["Hero.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "h-screen bg-cover bg-center relative flex items-center justify-center overflow-hidden",
-        style: {
-            backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1673909705718-e7c23ee7220b?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
-        },
+        className: "h-screen relative flex items-center justify-center overflow-hidden bg-white",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative z-10 text-center text-white max-w-4xl px-4 sm:px-8",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-6 group",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-thin text-white tracking-[0.1em] leading-tight group-hover:text-amber-100 transition-all duration-700 relative",
-                            style: {
-                                fontFamily: 'Playfair Display, serif'
-                            },
-                            children: [
-                                "BRILLA CON LO",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "block text-amber-200 mt-1 sm:mt-2 relative",
-                                    children: [
-                                        "ESENCIAL",
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "absolute -bottom-2 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-amber-300/80 to-transparent"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/home/Hero.tsx",
-                                            lineNumber: 21,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/home/Hero.tsx",
-                                    lineNumber: 19,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/home/Hero.tsx",
-                            lineNumber: 14,
-                            columnNumber: 11
-                        }, this)
+                className: "absolute inset-0 transition-transform duration-500 ease-out",
+                style: {
+                    transform: "translate(".concat(mousePosition.x, "px, ").concat(mousePosition.y, "px) scale(1.1)")
+                },
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "w-full h-full bg-cover bg-center",
+                    style: {
+                        backgroundImage: "url('https://images.unsplash.com/photo-1673909705718-e7c23ee7220b?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                    },
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 bg-gradient-to-b from-black/60 from-0% via-black/20 via-30% via-white/0 via-60% to-white to-90%"
                     }, void 0, false, {
                         fileName: "[project]/src/components/home/Hero.tsx",
-                        lineNumber: 13,
+                        lineNumber: 40,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/home/Hero.tsx",
+                    lineNumber: 33,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/home/Hero.tsx",
+                lineNumber: 27,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative z-10 text-center max-w-6xl px-6 sm:px-12 transition-all duration-1000 delay-200 ".concat(isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'),
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extralight text-yellow-500 tracking-[0.2em] leading-none mb-6",
+                        style: {
+                            fontFamily: 'Playfair Display, serif'
+                        },
+                        children: "VERONA"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/home/Hero.tsx",
+                        lineNumber: 48,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-8 sm:mb-12",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg sm:text-xl md:text-2xl font-light text-amber-100/90 tracking-[0.05em] leading-relaxed px-2",
-                            style: {
-                                fontFamily: 'Montserrat, sans-serif'
-                            },
-                            children: "Elegancia y distinción en cada pieza"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/home/Hero.tsx",
-                            lineNumber: 27,
-                            columnNumber: 11
-                        }, this)
+                        className: "w-24 h-px bg-amber-500 mx-auto mb-6"
                     }, void 0, false, {
                         fileName: "[project]/src/components/home/Hero.tsx",
-                        lineNumber: 26,
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-xl sm:text-2xl md:text-3xl font-light text-black tracking-[0.15em] mb-12",
+                        style: {
+                            fontFamily: 'Montserrat, sans-serif'
+                        },
+                        children: "BIJOUTERIE & ACCESORIOS"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/home/Hero.tsx",
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/home/Hero.tsx",
-                lineNumber: 12,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$ScrollIndicator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                onClick: ()=>window.scrollTo({
-                        top: window.innerHeight,
-                        behavior: 'smooth'
-                    })
-            }, void 0, false, {
-                fileName: "[project]/src/components/home/Hero.tsx",
-                lineNumber: 36,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "hidden sm:block absolute top-8 left-4 sm:left-8 w-12 sm:w-16 h-12 sm:h-16 border-l-2 border-t-2 border-amber-300/30"
+                className: "absolute bottom-32 left-1/2 -translate-x-1/2 z-20",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$ScrollIndicator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    onClick: ()=>window.scrollTo({
+                            top: window.innerHeight,
+                            behavior: 'smooth'
+                        })
+                }, void 0, false, {
+                    fileName: "[project]/src/components/home/Hero.tsx",
+                    lineNumber: 70,
+                    columnNumber: 9
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/home/Hero.tsx",
-                lineNumber: 39,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "hidden sm:block absolute top-8 right-4 sm:right-8 w-12 sm:w-16 h-12 sm:h-16 border-r-2 border-t-2 border-amber-300/30"
-            }, void 0, false, {
-                fileName: "[project]/src/components/home/Hero.tsx",
-                lineNumber: 40,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "hidden sm:block absolute bottom-8 left-4 sm:left-8 w-12 sm:w-16 h-12 sm:h-16 border-l-2 border-b-2 border-amber-300/30"
-            }, void 0, false, {
-                fileName: "[project]/src/components/home/Hero.tsx",
-                lineNumber: 41,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "hidden sm:block absolute bottom-8 right-4 sm:right-8 w-12 sm:w-16 h-12 sm:h-16 border-r-2 border-b-2 border-amber-300/30"
-            }, void 0, false, {
-                fileName: "[project]/src/components/home/Hero.tsx",
-                lineNumber: 42,
+                lineNumber: 69,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/home/Hero.tsx",
-        lineNumber: 5,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }
+_s(Hero, "+iAxKq/g7R0ug7rIK5a7synY29A=");
 _c = Hero;
 var _c;
 __turbopack_context__.k.register(_c, "Hero");

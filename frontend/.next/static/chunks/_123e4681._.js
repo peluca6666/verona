@@ -5,24 +5,32 @@
 __turbopack_context__.s([
     "apiRequest",
     ()=>apiRequest,
+    "createProduct",
+    ()=>createProduct,
+    "deleteProduct",
+    ()=>deleteProduct,
     "getCategories",
     ()=>getCategories,
     "getProductById",
     ()=>getProductById,
     "getProducts",
     ()=>getProducts,
+    "getProductsForAdmin",
+    ()=>getProductsForAdmin,
     "getToken",
     ()=>getToken,
     "login",
     ()=>login,
     "saveToken",
-    ()=>saveToken
+    ()=>saveToken,
+    "updateProduct",
+    ()=>updateProduct
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var _process_env_NEXT_PUBLIC_API_URL;
 const API_BASE = (_process_env_NEXT_PUBLIC_API_URL = ("TURBOPACK compile-time value", "http://localhost:5000/api")) === null || _process_env_NEXT_PUBLIC_API_URL === void 0 ? void 0 : _process_env_NEXT_PUBLIC_API_URL.replace('/api', '');
 const API_URL = "".concat(API_BASE, "/api");
-const AUTH_URL = "".concat(API_BASE, "/auth");
+const AUTH_URL = "".concat(API_BASE, "/api/auth");
 async function apiRequest(endpoint) {
     const url = "".concat(API_URL).concat(endpoint);
     const response = await fetch(url);
@@ -66,6 +74,63 @@ function getToken() {
 async function getProductById(id) {
     const response = await apiRequest("/products/".concat(id));
     return response.data;
+}
+async function getProductsForAdmin() {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin"), {
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Error fetching products');
+    }
+    return response.json();
+}
+async function createProduct(data) {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin"), {
+        method: 'POST',
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error('Error creating product');
+    }
+    return response.json();
+}
+async function updateProduct(id, data) {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin/").concat(id), {
+        method: 'PUT',
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+        throw new Error('Error updating product');
+    }
+    return response.json();
+}
+async function deleteProduct(id) {
+    const token = getToken();
+    const response = await fetch("".concat(API_URL, "/products/admin/").concat(id), {
+        method: 'DELETE',
+        headers: {
+            'Authorization': "Bearer ".concat(token),
+            'Content-Type': 'application/json'
+        }
+    });
+    if (!response.ok) {
+        throw new Error('Error deleting product');
+    }
+    return response.json();
 }
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
@@ -760,6 +825,11 @@ function CatalogPage() {
     const [products, setProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [categoryName, setCategoryName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [searchTerm, setSearchTerm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [materialFilter, setMaterialFilter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [priceRange, setPriceRange] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        min: '',
+        max: ''
+    });
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -790,14 +860,30 @@ function CatalogPage() {
     }["CatalogPage.useEffect"], [
         categoryId
     ]);
-    const filteredProducts = products.filter((p)=>p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    // Get unique materials - filtra null y undefined
+    const materials = Array.from(new Set(products.map((p)=>p.material).filter((material)=>Boolean(material))));
+    // Filter products
+    const filteredProducts = products.filter((p)=>{
+        const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesMaterial = !materialFilter || p.material === materialFilter;
+        const matchesPrice = (!priceRange.min || p.price >= parseFloat(priceRange.min)) && (!priceRange.max || p.price <= parseFloat(priceRange.max));
+        return matchesSearch && matchesMaterial && matchesPrice;
+    });
+    const clearFilters = ()=>{
+        setSearchTerm('');
+        setMaterialFilter('');
+        setPriceRange({
+            min: '',
+            max: ''
+        });
+    };
     if (loading) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "bg-white min-h-screen",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/app/catalog/page.tsx",
-                    lineNumber: 55,
+                    lineNumber: 79,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -809,28 +895,28 @@ function CatalogPage() {
                             children: "Cargando catálogo..."
                         }, void 0, false, {
                             fileName: "[project]/src/app/catalog/page.tsx",
-                            lineNumber: 58,
+                            lineNumber: 82,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/catalog/page.tsx",
-                        lineNumber: 57,
+                        lineNumber: 81,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/catalog/page.tsx",
-                    lineNumber: 56,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/app/catalog/page.tsx",
-                    lineNumber: 61,
+                    lineNumber: 85,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/catalog/page.tsx",
-            lineNumber: 54,
+            lineNumber: 78,
             columnNumber: 7
         }, this);
     }
@@ -840,7 +926,7 @@ function CatalogPage() {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/app/catalog/page.tsx",
-                    lineNumber: 69,
+                    lineNumber: 93,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -852,28 +938,28 @@ function CatalogPage() {
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/src/app/catalog/page.tsx",
-                            lineNumber: 72,
+                            lineNumber: 96,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/catalog/page.tsx",
-                        lineNumber: 71,
+                        lineNumber: 95,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/catalog/page.tsx",
-                    lineNumber: 70,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/app/catalog/page.tsx",
-                    lineNumber: 75,
+                    lineNumber: 99,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/catalog/page.tsx",
-            lineNumber: 68,
+            lineNumber: 92,
             columnNumber: 7
         }, this);
     }
@@ -882,12 +968,11 @@ function CatalogPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/catalog/page.tsx",
-                lineNumber: 82,
+                lineNumber: 106,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 className: "py-12 sm:py-20",
-                "data-scroll": true,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "container mx-auto px-4 sm:px-12",
                     children: [
@@ -902,26 +987,101 @@ function CatalogPage() {
                                     children: categoryName ? categoryName.toUpperCase() : 'CATÁLOGO COMPLETO'
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/catalog/page.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 110,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "max-w-md mx-auto mb-8",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "text",
-                                        placeholder: "Buscar productos...",
-                                        value: searchTerm,
-                                        onChange: (e)=>setSearchTerm(e.target.value),
-                                        className: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500 transition-colors text-gray-900 placeholder-gray-500"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/catalog/page.tsx",
-                                        lineNumber: 95,
-                                        columnNumber: 3
-                                    }, this)
-                                }, void 0, false, {
+                                    className: "max-w-4xl mx-auto mb-8 space-y-4",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "text",
+                                            placeholder: "Buscar productos...",
+                                            value: searchTerm,
+                                            onChange: (e)=>setSearchTerm(e.target.value),
+                                            className: "w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-amber-500 transition-colors text-gray-900 placeholder-gray-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/catalog/page.tsx",
+                                            lineNumber: 120,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "grid grid-cols-1 sm:grid-cols-3 gap-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                    value: materialFilter,
+                                                    onChange: (e)=>setMaterialFilter(e.target.value),
+                                                    className: "px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-amber-500 text-gray-900 bg-white",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                            value: "",
+                                                            children: "Todos los materiales"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/catalog/page.tsx",
+                                                            lineNumber: 136,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        materials.map((material)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                                value: material,
+                                                                children: material
+                                                            }, material, false, {
+                                                                fileName: "[project]/src/app/catalog/page.tsx",
+                                                                lineNumber: 138,
+                                                                columnNumber: 21
+                                                            }, this))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/catalog/page.tsx",
+                                                    lineNumber: 131,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "number",
+                                                    placeholder: "Precio mínimo",
+                                                    value: priceRange.min,
+                                                    onChange: (e)=>setPriceRange({
+                                                            ...priceRange,
+                                                            min: e.target.value
+                                                        }),
+                                                    className: "px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-amber-500 text-gray-900 placeholder-gray-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/catalog/page.tsx",
+                                                    lineNumber: 145,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "number",
+                                                    placeholder: "Precio máximo",
+                                                    value: priceRange.max,
+                                                    onChange: (e)=>setPriceRange({
+                                                            ...priceRange,
+                                                            max: e.target.value
+                                                        }),
+                                                    className: "px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-amber-500 text-gray-900 placeholder-gray-500"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/app/catalog/page.tsx",
+                                                    lineNumber: 154,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/app/catalog/page.tsx",
+                                            lineNumber: 129,
+                                            columnNumber: 15
+                                        }, this),
+                                        (searchTerm || materialFilter || priceRange.min || priceRange.max) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: clearFilters,
+                                            className: "text-amber-600 hover:text-amber-700 font-medium text-sm transition-colors",
+                                            children: "Limpiar filtros"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/catalog/page.tsx",
+                                            lineNumber: 165,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/src/app/catalog/page.tsx",
-                                    lineNumber: 94,
-                                    columnNumber: 1
+                                    lineNumber: 118,
+                                    columnNumber: 13
                                 }, this),
                                 filteredProducts.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-gray-600",
@@ -932,60 +1092,70 @@ function CatalogPage() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/catalog/page.tsx",
-                                    lineNumber: 105,
+                                    lineNumber: 175,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/catalog/page.tsx",
-                            lineNumber: 85,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, this),
                         filteredProducts.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "text-center text-gray-500 py-12",
-                            children: searchTerm ? 'No se encontraron productos' : 'No hay productos disponibles en esta categoría'
+                            children: searchTerm || materialFilter || priceRange.min || priceRange.max ? 'No se encontraron productos con estos filtros' : 'No hay productos disponibles en esta categoría'
                         }, void 0, false, {
                             fileName: "[project]/src/app/catalog/page.tsx",
-                            lineNumber: 112,
+                            lineNumber: 182,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto",
-                            children: filteredProducts.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$ProductCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    product: product
+                            children: filteredProducts.map((product, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "animate-on-scroll",
+                                    style: {
+                                        animationDelay: "".concat(index * 0.05, "s")
+                                    },
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$ProductCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        product: product
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/catalog/page.tsx",
+                                        lineNumber: 197,
+                                        columnNumber: 19
+                                    }, this)
                                 }, product.id, false, {
                                     fileName: "[project]/src/app/catalog/page.tsx",
-                                    lineNumber: 118,
+                                    lineNumber: 190,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/catalog/page.tsx",
-                            lineNumber: 116,
+                            lineNumber: 188,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/catalog/page.tsx",
-                    lineNumber: 84,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/catalog/page.tsx",
-                lineNumber: 83,
+                lineNumber: 107,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/catalog/page.tsx",
-                lineNumber: 124,
+                lineNumber: 204,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/catalog/page.tsx",
-        lineNumber: 81,
+        lineNumber: 105,
         columnNumber: 5
     }, this);
 }
-_s(CatalogPage, "73lMhWO0GKQims5DOYCPK/l9h8I=", false, function() {
+_s(CatalogPage, "PZQmsOGbl6H5jBfRxZt18HivvKs=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSearchParams"]
     ];

@@ -86,13 +86,19 @@ export default function CategoryGrid({ className = '' }: CategoryGridProps) {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {categories.map((category) => (
-            <div key={category.id} className="flex-1">
-              <CategoryCard category={category} />
-            </div>
-          ))}
-        </div>
+        {/* responsive grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+  {categories.map((category, index) => (
+    <div 
+      key={category.id}
+      style={{
+        animationDelay: `${index * 0.15}s`
+      }}
+    >
+      <CategoryCard category={category} />
+    </div>
+  ))}
+</div>
       </div>
     </section>
   );

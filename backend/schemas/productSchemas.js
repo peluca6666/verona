@@ -1,6 +1,5 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-//Schema para CREAR productos
 export const createProductSchema = z.object({
   name: z.string()
     .min(1, "Product name is required")
@@ -13,6 +12,10 @@ export const createProductSchema = z.object({
   category_id: z.number()
     .int("Category ID must be an integer")
     .positive("Valid category ID required"),
+  
+  material: z.string()
+    .max(255, "Material name too long")
+    .optional(),
   
   description: z.string()
     .max(1000, "Description too long")
@@ -29,7 +32,6 @@ export const createProductSchema = z.object({
     .optional()
 });
 
-// Schema para ACTUALIZAR productos (todos opcionales)
 export const updateProductSchema = z.object({
   name: z.string()
     .min(1, "Product name cannot be empty")
@@ -46,6 +48,10 @@ export const updateProductSchema = z.object({
     .positive("Valid category ID required")
     .optional(),
   
+  material: z.string()
+    .max(255, "Material name too long")
+    .optional(),
+  
   description: z.string()
     .max(1000, "Description too long")
     .optional(),
@@ -60,4 +66,3 @@ export const updateProductSchema = z.object({
   is_active: z.boolean()
     .optional()
 });
-

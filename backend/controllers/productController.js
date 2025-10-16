@@ -72,7 +72,7 @@ async getProductById(req, res) {
         } catch (error) {
             console.error('Error in createProduct:', error.message);
             
-            // Manejo específico de errores
+            // Specific error messages
             if (error.message.includes('required') || 
                 error.message.includes('does not exist') ||
                 error.message.includes('Valid')) {

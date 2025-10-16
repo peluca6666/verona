@@ -2,7 +2,7 @@ import { Category, Product } from "@/types";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '');
 const API_URL = `${API_BASE}/api`;
-const AUTH_URL = `${API_BASE}/auth`;
+const AUTH_URL = `${API_BASE}/api/auth`; 
 
 // function to make api requests
 export async function apiRequest<T>(endpoint: string): Promise<T> {
@@ -37,7 +37,8 @@ export async function login(email: string, password: string) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email, password })
-    })
+    });
+    
     if (!response.ok) {
         throw new Error('Credenciales incorrectas');
     }
@@ -60,4 +61,74 @@ export function getToken(): string | null {
 export async function getProductById(id: string) {
     const response = await apiRequest<{ success: boolean, data: Product }>(`/products/${id}`);
     return response.data;
+}
+
+// Admin - Products
+export async function getProductsForAdmin() {
+    const token = getToken();
+    const response = await fetch(`${API_URL}/products/admin`, {
+        headers: { 
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    });
+    
+    if (!response.ok) {
+        throw new Error('Error fetching products');
+    }
+    
+    return response.json();
+}
+
+export async function createProduct(data: any) {
+    const token = getToken();
+    const response = await fetch(`${API_URL}/products/admin`, {
+        method: 'POST',
+        headers: { 
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    
+    if (!response.ok) {
+        throw new Error('Error creating product');
+    }
+    
+    return response.json();
+}
+
+export async function updateProduct(id: number, data: any) {
+    const token = getToken();
+    const response = await fetch(`${API_URL}/products/admin/${id}`, {
+        method: 'PUT',
+        headers: { 
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    
+    if (!response.ok) {
+        throw new Error('Error updating product');
+    }
+    
+    return response.json();
+}
+
+export async function deleteProduct(id: number) {
+    const token = getToken();
+    const response = await fetch(`${API_URL}/products/admin/${id}`, {
+        method: 'DELETE',
+        headers: { 
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    });
+    
+    if (!response.ok) {
+        throw new Error('Error deleting product');
+    }
+    
+    return response.json();
 }

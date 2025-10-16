@@ -54,10 +54,10 @@ async getProductById(id) {
 
     async createProduct(productData) {
         try {
-            //  VALIDAR CON ZOD
+            //  zod validation
             const validatedData = createProductSchema.parse(productData);
 
-            //  VERIFICAR QUE LA CATEGORÍA EXISTE
+            //  check category exists
             const categoryExists = await prisma.category.findUnique({
                 where: { id: validatedData.category_id }
             });
@@ -66,7 +66,7 @@ async getProductById(id) {
                 throw new Error('Category does not exist');
             }
 
-            //  CREAR PRODUCTO
+            //  create product
             const newProduct = await prisma.product.create({
                 data: {
                     name: validatedData.name.trim(),
@@ -106,7 +106,7 @@ async getProductById(id) {
 
     async updateProduct(id, productData) {
         try {
-            // VERIFICAR QUE EL PRODUCTO EXISTE
+            // cHECK PRODUCT EXISTS
             const existingProduct = await prisma.product.findUnique({
                 where: { id: parseInt(id) }
             });
@@ -115,10 +115,10 @@ async getProductById(id) {
                 throw new Error('Product not found');
             }
 
-            // VALIDAR DATOS CON ZOD
+            // validate with zod
             const validatedData = updateProductSchema.parse(productData);
 
-            //  SI ENVÍAN CATEGORY_ID, VERIFICAR QUE EXISTE
+            //  if category_id is being updated, check it exists
             if (validatedData.category_id) {
                 const categoryExists = await prisma.category.findUnique({
                     where: { id: validatedData.category_id }
@@ -129,18 +129,18 @@ async getProductById(id) {
                 }
             }
 
-            //  PREPARAR DATOS PARA ACTUALIZAR
+            //  prepare data to update
             const dataToUpdate = { ...validatedData };
 
-            //  SI CAMBIA EL NOMBRE, GENERAR NUEVO SLUG
+            //  if name is being updated, update slug too
             if (validatedData.name) {
                 dataToUpdate.slug = this.generateSlug(validatedData.name);
             }
 
-            //  SIEMPRE ACTUALIZAR TIMESTAMP
+            //  always update updated_at
             dataToUpdate.updated_at = new Date();
 
-            // ACTUALIZAR EN BASE DE DATOS
+            // update product 
             const updatedProduct = await prisma.product.update({
                 where: { id: parseInt(id) },
                 data: dataToUpdate,
@@ -163,7 +163,7 @@ async getProductById(id) {
 
     async deleteProduct(id) {
     try {
-        //  VERIFICAR QUE EL PRODUCTO EXISTE
+        //  cHECK PRODUCT EXISTS
         const existingProduct = await prisma.product.findUnique({
             where: { id: parseInt(id) }
         });
@@ -172,7 +172,7 @@ async getProductById(id) {
             throw new Error('Product not found');
         }
 
-        // VERIFICAR QUE NO ESTÉ YA INACTIVO
+        // check if already inactive
         if (!existingProduct.is_active) {
             throw new Error('Product is already inactive');
         }

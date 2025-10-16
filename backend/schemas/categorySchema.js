@@ -7,7 +7,7 @@ export const createCategorySchema = z.object({
        
     
 image: z.string()
-        .url({ message: "Invalid image URL" })
+         .url({ message: "Invalid image URL" })
         .optional(),
     
     is_active: z.boolean()

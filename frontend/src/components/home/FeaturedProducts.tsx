@@ -40,16 +40,17 @@ export default function FeaturedProducts() {
 
   return (
     <section className="bg-gray-50 py-12 sm:py-20">
+      
       <div className="container mx-auto px-4 sm:px-12">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 
+          <h2
             className="text-3xl sm:text-5xl font-thin text-gray-900 tracking-[0.1em] mb-4 sm:mb-6"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             PRODUCTOS DESTACADOS
           </h2>
           <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-4 sm:mb-6"></div>
-          <p 
+          <p
             className="text-gray-600 text-base sm:text-lg font-light tracking-[0.05em] max-w-2xl mx-auto px-4"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
@@ -57,10 +58,18 @@ export default function FeaturedProducts() {
           </p>
         </div>
 
-        {/* Grid optimizado para móvil - 2 columnas en móvil, 3 en desktop */}
+        {/* grid with products */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product, index) => (
+            <div 
+              key={product.id}
+              className="animate-on-scroll"
+              style={{
+                animationDelay: `${index * 0.1}s`
+              }}
+            >
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
 
