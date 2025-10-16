@@ -7,8 +7,11 @@ export default function About() {
     return (
         <div className="bg-white min-h-screen">
             <Header />
-            <main className="py-8 sm:py-16">
-                <div className="container mx-auto px-4 max-w-6xl mt-9">
+
+            <main className="pt-24 pb-8 sm:pt-32 sm:pb-16">
+
+
+                <div className="container mx-auto px-4 max-w-6xl">
 
                     <div className="text-center mb-12 sm:mb-16">
                         <h1
@@ -20,91 +23,98 @@ export default function About() {
                         <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto"></div>
                     </div>
 
-                    <div className="space-y-8 sm:space-y-12">
+                    <div className="space-y-10 sm:space-y-16">
 
-                        <div className="bg-gray-50 rounded-2xl p-6 sm:p-10 hover:shadow-lg transition-shadow duration-300">
+
+                        <div className="bg-gray-50 rounded-2xl p-6 sm:p-10 shadow-md">
                             <h2
                                 className="text-xl sm:text-2xl font-light text-gray-900 mb-4"
                                 style={{ fontFamily: 'Playfair Display, serif' }}
                             >
                                 Nuestra Historia
                             </h2>
-                            <p className="text-gray-700 leading-relaxed mb-3 text-justify">
+
+                            <p className="text-gray-700 leading-relaxed text-base">
                                 Verona Joyas es un pequeño emprendimiento que se inauguró un 16 de septiembre de 2024 en Villa del Dique.
                                 A medida de que pasaba el tiempo, nuestro negocio era mas conocido y nos alegra decir que ahora trabajamos en distintas zonas de todo Calamuchita. Por el momento trabajamos solo con
-                                tienda online coordinando entregas pero trabajaremos duro para tener nuestro espacio físico 🤍
+                                **tienda online** coordinando entregas, pero trabajaremos duro para tener nuestro espacio físico 🤍
                             </p>
                         </div>
 
-                        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+
+                        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                             <div className="group">
-                                <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 hover:bg-amber-50 transition-colors duration-300">
+                                <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-md hover:bg-amber-50 transition-colors duration-300">
                                     <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-amber-200 transition-colors duration-300">
                                         <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                         </svg>
                                     </div>
-                                    <h3 className="text-lg font-medium text-gray-900 mb-2 text-justify">Calidad Garantizada</h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed">
-                                        En nuestro emprendimiento encontrarás joyas de acero quirúrgico y sus variantes de acero dorado, blanco y joyas de plata 925.
+
+                                    <h3 className="text-lg font-medium text-gray-900 mb-2">Calidad Garantizada</h3>
+                                    <p className="text-gray-600 text-base leading-relaxed">
+                                        En nuestro emprendimiento encontrarás joyas de **acero quirúrgico** y sus variantes de acero dorado, blanco y joyas de **plata 925**.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="group">
-                                <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 hover:bg-amber-50 transition-colors duration-300">
+                                <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-md hover:bg-amber-50 transition-colors duration-300">
                                     <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-amber-200 transition-colors duration-300">
                                         <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                         </svg>
                                     </div>
-                                    <h3 className="text-lg font-medium text-gray-900 mb-2 text-justify">Atención Personalizada</h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed">
+
+                                    <h3 className="text-lg font-medium text-gray-900 mb-2">Atención Personalizada</h3>
+                                    <p className="text-gray-600 text-base leading-relaxed">
                                         Estoy muy feliz de que seas parte del camino de Verona Joyas y espero que nos sigas acompañando por muchos más años. Ya sabes que las joyitas mas lindas, en tendencia, para todas las edades y géneros las encontrás acá ✨
-                                        Te saluda Meli.
+                                        Te saluda **Meli**.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 sm:p-10 border border-amber-100">
+                        <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 sm:p-10 border border-amber-100 shadow-md">
                             <h2
                                 className="text-xl sm:text-2xl font-light text-gray-900 mb-6 text-center"
                                 style={{ fontFamily: 'Playfair Display, serif' }}
                             >
                                 ¿Por Qué Elegirnos?
                             </h2>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+
+                            <div className="grid grid-cols-3 gap-4">
                                 <div className="text-center">
                                     <div className="text-2xl sm:text-3xl font-light text-amber-600 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
                                         100%
                                     </div>
-                                    <p className="text-gray-700 text-sm font-medium">Productos Auténticos</p>
+                                    <p className="text-gray-700 text-xs sm:text-sm font-medium">Productos Auténticos</p>
                                 </div>
                                 <div className="text-center">
                                     <div className="text-2xl sm:text-3xl font-light text-amber-600 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
                                         +100
                                     </div>
-                                    <p className="text-gray-700 text-sm font-medium">Clientes Satisfechos</p>
+                                    <p className="text-gray-700 text-xs sm:text-sm font-medium">Clientes Satisfechos</p>
                                 </div>
-                                <div className="text-center col-span-2 sm:col-span-1">
+                                <div className="text-center">
                                     <div className="text-2xl sm:text-3xl font-light text-amber-600 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
                                         100%
                                     </div>
-                                    <p className="text-gray-700 text-sm font-medium">Compromiso</p>
+                                    <p className="text-gray-700 text-xs sm:text-sm font-medium">Compromiso</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="bg-gray-50 rounded-2xl p-6 sm:p-10 text-center">
+                        {/* CTA WhatsApp */}
+                        <div className="bg-gray-50 rounded-2xl p-6 sm:p-10 text-center shadow-md">
                             <h2
                                 className="text-xl sm:text-2xl font-light text-gray-900 mb-3"
                                 style={{ fontFamily: 'Playfair Display, serif' }}
                             >
                                 ¿Tenés Alguna Consulta?
                             </h2>
-                            <p className="text-gray-600 mb-6 text-sm sm:text-base">
-                                Estamos acá para ayudarte. No dudes en contactarnos por WhatsApp.
+                            <p className="text-gray-600 mb-6 text-base">
+                                Estamos acá para ayudarte. No dudes en **contactarnos por WhatsApp**.
                             </p>
                             <button
                                 onClick={() => window.open('https://wa.me/5493546515266?text=Hola! Quisiera hacer una consulta', '_blank')}
