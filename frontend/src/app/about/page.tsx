@@ -53,7 +53,7 @@ export default function About() {
 
                                     <h3 className="text-lg font-medium text-gray-900 mb-2">Calidad Garantizada</h3>
                                     <p className="text-gray-600 text-base leading-relaxed">
-                                        En nuestro emprendimiento encontrarás joyas de **acero quirúrgico** y sus variantes de acero dorado, blanco y joyas de **plata 925**.
+                                        En nuestro emprendimiento encontrarás joyas de acero quirúrgico y sus variantes de acero dorado y blanco.
                                     </p>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ export default function About() {
                                     <h3 className="text-lg font-medium text-gray-900 mb-2">Atención Personalizada</h3>
                                     <p className="text-gray-600 text-base leading-relaxed">
                                         Estoy muy feliz de que seas parte del camino de Verona Joyas y espero que nos sigas acompañando por muchos más años. Ya sabes que las joyitas mas lindas, en tendencia, para todas las edades y géneros las encontrás acá ✨
-                                        Te saluda **Meli**.
+                                        Te saluda Meli.
                                     </p>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ export default function About() {
                                 ¿Tenés Alguna Consulta?
                             </h2>
                             <p className="text-gray-600 mb-6 text-base">
-                                Estamos acá para ayudarte. No dudes en **contactarnos por WhatsApp**.
+                                Estamos acá para ayudarte. No dudes en contactarnos por WhatsApp.
                             </p>
                             <button
                                 onClick={() => window.open('https://wa.me/5493546515266?text=Hola! Quisiera hacer una consulta', '_blank')}
