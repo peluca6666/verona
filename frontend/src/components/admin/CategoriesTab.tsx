@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Category } from '@/types';
-import { getCategoriesForAdmin, createCategory, updateCategory, deleteCategory } from '@/lib/api';
+import { getCategoriesForAdmin, createCategory, updateCategory } from '@/lib/api';
 import toast from 'react-hot-toast';
 import CategoryForm from './CategoryForm';
 
@@ -36,18 +36,6 @@ export default function CategoriesTab() {
       fetchCategories();
     } catch (err) {
       toast.error('Error updating category');
-    }
-  }
-
-  async function handleDelete(category: Category) {
-    if (!confirm(`Are you sure you want to delete "${category.name}"?`)) return;
-    
-    try {
-      await deleteCategory(category.id);
-      toast.success('Category deleted');
-      fetchCategories();
-    } catch (err) {
-      toast.error('Error deleting category');
     }
   }
 
@@ -125,6 +113,7 @@ export default function CategoriesTab() {
                 </div>
               </div>
 
+              {/* Botones de acción */}
               <div className="flex gap-3 pt-3 border-t border-gray-100">
                 <button
                   onClick={() => { setEditingCategory(category); setShowForm(true); }}
@@ -139,12 +128,6 @@ export default function CategoriesTab() {
                   }`}
                 >
                   {category.is_active ? 'Disable' : 'Enable'}
-                </button>
-                <button
-                  onClick={() => handleDelete(category)}
-                  className="px-4 py-2.5 bg-red-50 text-red-700 rounded-lg hover:bg-red-100 font-medium text-sm transition"
-                >
-                  Delete
                 </button>
               </div>
             </div>
