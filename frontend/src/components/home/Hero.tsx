@@ -42,7 +42,7 @@ export default function Hero() {
       {/* Content */}
       <div className={`relative z-10 text-center max-w-6xl px-6 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
-       {/* Main Heading */}
+     {/* Main Heading */}
 <div className="mb-8 flex justify-center">
   <img 
     src="/veronaLogo.PNG" 
