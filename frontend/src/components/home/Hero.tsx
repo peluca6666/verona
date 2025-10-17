@@ -42,19 +42,18 @@ export default function Hero() {
       {/* Content */}
       <div className={`relative z-10 text-center max-w-6xl px-6 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
-        {/* Main Heading */}
-        <h1 
-          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-thin text-amber-300 tracking-[0.25em] leading-none mb-8"
-          style={{ 
-            fontFamily: 'Playfair Display, serif',
-          }}
-        >
-          VERONA
-        </h1>
+       {/* Main Heading */}
+<div className="mb-8 flex justify-center">
+  <img 
+    src="/veronaLogo.PNG" 
+    alt="Verona Logo"
+    className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg w-full h-auto" 
+  />
+</div>
 
         {/* Subtitle */}
         <p 
-          className="text-lg sm:text-xl md:text-2xl font-light text-white tracking-[0.2em]"
+          className="text-lg  sm:text-xl md:text-2xl font-light text-white tracking-[0.2em]"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           BIJOUTERIE & ACCESORIOS
