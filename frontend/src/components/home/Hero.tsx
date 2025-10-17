@@ -44,7 +44,7 @@ export default function Hero() {
         
   <div className="mb-8 flex justify-center">
   <img 
-    src={`${process.env.PUBLIC_URL || ''}/veronaLogo.PNG`}
+    src={`./veronaLogo.PNG`}
     alt="Verona Logo"
     className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg w-full h-auto" 
   />
