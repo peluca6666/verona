@@ -45,47 +45,63 @@ export default function Hero() {
         {/* SVG Logo */}
         <div className="mb-8 flex justify-center">
           <svg 
-            viewBox="0 0 500 400" 
+            viewBox="0 0 500 420" 
             className="w-64 sm:w-80 md:w-96 lg:w-[28rem] h-auto"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Diamond Icon */}
-            <g transform="translate(250, 80)">
-              {/* Outer diamond shape */}
+            {/* Outer Rectangle Border */}
+            <rect 
+              x="20" 
+              y="20" 
+              width="460" 
+              height="380" 
+              fill="none" 
+              stroke="#D4AF37" 
+              strokeWidth="2.5"
+              rx="4"
+            />
+
+            {/* Diamond Icon - More flattened */}
+            <g transform="translate(250, 100)">
+              {/* Outer diamond shape - flatter top */}
               <polygon 
-                points="0,-60 60,0 0,90 -60,0" 
+                points="0,-45 70,0 0,75 -70,0" 
                 fill="none" 
                 stroke="#D4AF37" 
                 strokeWidth="3"
               />
               
               {/* Top facets */}
-              <line x1="-60" y1="0" x2="0" y2="20" stroke="#D4AF37" strokeWidth="2"/>
-              <line x1="60" y1="0" x2="0" y2="20" stroke="#D4AF37" strokeWidth="2"/>
-              <line x1="0" y1="-60" x2="-30" y2="0" stroke="#D4AF37" strokeWidth="2"/>
-              <line x1="0" y1="-60" x2="30" y2="0" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="-70" y1="0" x2="0" y2="15" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="70" y1="0" x2="0" y2="15" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="0" y1="-45" x2="-35" y2="0" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="0" y1="-45" x2="35" y2="0" stroke="#D4AF37" strokeWidth="2"/>
               
-              {/* Middle horizontal line */}
-              <line x1="-60" y1="0" x2="60" y2="0" stroke="#D4AF37" strokeWidth="2.5"/>
+              {/* Middle horizontal line - thicker */}
+              <line x1="-70" y1="0" x2="70" y2="0" stroke="#D4AF37" strokeWidth="3"/>
               
               {/* Bottom facets */}
-              <line x1="-60" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
-              <line x1="60" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
-              <line x1="-30" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
-              <line x1="30" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="-70" y1="0" x2="0" y2="75" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="70" y1="0" x2="0" y2="75" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="-35" y1="0" x2="0" y2="75" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="35" y1="0" x2="0" y2="75" stroke="#D4AF37" strokeWidth="2"/>
               
               {/* Center vertical line */}
-              <line x1="0" y1="-60" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="0" y1="-45" x2="0" y2="75" stroke="#D4AF37" strokeWidth="2.5"/>
               
-              {/* Top inner lines */}
-              <line x1="-30" y1="0" x2="0" y2="-60" stroke="#D4AF37" strokeWidth="1.5"/>
-              <line x1="30" y1="0" x2="0" y2="-60" stroke="#D4AF37" strokeWidth="1.5"/>
+              {/* Top inner lines for detail */}
+              <line x1="-35" y1="0" x2="0" y2="-45" stroke="#D4AF37" strokeWidth="1.5"/>
+              <line x1="35" y1="0" x2="0" y2="-45" stroke="#D4AF37" strokeWidth="1.5"/>
+              
+              {/* Additional top facet details */}
+              <line x1="-17.5" y1="-22.5" x2="0" y2="15" stroke="#D4AF37" strokeWidth="1"/>
+              <line x1="17.5" y1="-22.5" x2="0" y2="15" stroke="#D4AF37" strokeWidth="1"/>
             </g>
 
             {/* VERONA text */}
             <text 
               x="250" 
-              y="240" 
+              y="260" 
               textAnchor="middle" 
               fill="#D4AF37"
               fontSize="82"
@@ -98,10 +114,10 @@ export default function Hero() {
 
             {/* Left decorative line */}
             <line 
-              x1="45" 
-              y1="285" 
+              x1="50" 
+              y1="305" 
               x2="165" 
-              y2="285" 
+              y2="305" 
               stroke="#D4AF37" 
               strokeWidth="2"
             />
@@ -109,7 +125,7 @@ export default function Hero() {
             {/* JOYAS text */}
             <text 
               x="250" 
-              y="295" 
+              y="315" 
               textAnchor="middle" 
               fill="#D4AF37"
               fontSize="32"
@@ -123,9 +139,9 @@ export default function Hero() {
             {/* Right decorative line */}
             <line 
               x1="335" 
-              y1="285" 
-              x2="455" 
-              y2="285" 
+              y1="305" 
+              x2="450" 
+              y2="305" 
               stroke="#D4AF37" 
               strokeWidth="2"
             />
