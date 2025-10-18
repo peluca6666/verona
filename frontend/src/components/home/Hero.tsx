@@ -49,21 +49,21 @@ export default function Hero() {
             className="w-64 sm:w-80 md:w-96 lg:w-[28rem] h-auto"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Outer Rectangle Border */}
+            {/* Outer Rectangle Border - more delicate */}
             <rect 
-              x="20" 
-              y="20" 
-              width="460" 
-              height="380" 
+              x="30" 
+              y="30" 
+              width="440" 
+              height="360" 
               fill="none" 
               stroke="#D4AF37" 
-              strokeWidth="2.5"
-              rx="4"
+              strokeWidth="1"
+              rx="2"
             />
 
-            {/* Diamond Icon - More flattened */}
+            {/* Diamond Icon - flattened */}
             <g transform="translate(250, 100)">
-              {/* Outer diamond shape - flatter top */}
+              {/* Outer diamond shape */}
               <polygon 
                 points="0,-45 70,0 0,75 -70,0" 
                 fill="none" 
@@ -77,7 +77,7 @@ export default function Hero() {
               <line x1="0" y1="-45" x2="-35" y2="0" stroke="#D4AF37" strokeWidth="2"/>
               <line x1="0" y1="-45" x2="35" y2="0" stroke="#D4AF37" strokeWidth="2"/>
               
-              {/* Middle horizontal line - thicker */}
+              {/* Middle horizontal line */}
               <line x1="-70" y1="0" x2="70" y2="0" stroke="#D4AF37" strokeWidth="3"/>
               
               {/* Bottom facets */}
@@ -89,11 +89,11 @@ export default function Hero() {
               {/* Center vertical line */}
               <line x1="0" y1="-45" x2="0" y2="75" stroke="#D4AF37" strokeWidth="2.5"/>
               
-              {/* Top inner lines for detail */}
+              {/* Top inner lines */}
               <line x1="-35" y1="0" x2="0" y2="-45" stroke="#D4AF37" strokeWidth="1.5"/>
               <line x1="35" y1="0" x2="0" y2="-45" stroke="#D4AF37" strokeWidth="1.5"/>
               
-              {/* Additional top facet details */}
+              {/* Additional facet details */}
               <line x1="-17.5" y1="-22.5" x2="0" y2="15" stroke="#D4AF37" strokeWidth="1"/>
               <line x1="17.5" y1="-22.5" x2="0" y2="15" stroke="#D4AF37" strokeWidth="1"/>
             </g>
@@ -112,14 +112,14 @@ export default function Hero() {
               VERONA
             </text>
 
-            {/* Left decorative line */}
+            {/* Left decorative line - same distance from center */}
             <line 
-              x1="50" 
+              x1="60" 
               y1="305" 
-              x2="165" 
+              x2="160" 
               y2="305" 
               stroke="#D4AF37" 
-              strokeWidth="2"
+              strokeWidth="1.5"
             />
 
             {/* JOYAS text */}
@@ -136,14 +136,14 @@ export default function Hero() {
               JOYAS
             </text>
 
-            {/* Right decorative line */}
+            {/* Right decorative line - same distance from center */}
             <line 
-              x1="335" 
+              x1="340" 
               y1="305" 
-              x2="450" 
+              x2="440" 
               y2="305" 
               stroke="#D4AF37" 
-              strokeWidth="2"
+              strokeWidth="1.5"
             />
           </svg>
         </div>
