@@ -42,17 +42,99 @@ export default function Hero() {
       {/* Content */}
       <div className={`relative z-10 text-center max-w-6xl px-6 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
-  <div className="mb-8 flex justify-center">
-  <img 
-    src={`./veronaLogo.PNG`}
-    alt="Verona Logo"
-    className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg w-full h-auto" 
-  />
-</div>
+        {/* SVG Logo */}
+        <div className="mb-8 flex justify-center">
+          <svg 
+            viewBox="0 0 500 400" 
+            className="w-64 sm:w-80 md:w-96 lg:w-[28rem] h-auto"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Diamond Icon */}
+            <g transform="translate(250, 80)">
+              {/* Outer diamond shape */}
+              <polygon 
+                points="0,-60 60,0 0,90 -60,0" 
+                fill="none" 
+                stroke="#D4AF37" 
+                strokeWidth="3"
+              />
+              
+              {/* Top facets */}
+              <line x1="-60" y1="0" x2="0" y2="20" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="60" y1="0" x2="0" y2="20" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="0" y1="-60" x2="-30" y2="0" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="0" y1="-60" x2="30" y2="0" stroke="#D4AF37" strokeWidth="2"/>
+              
+              {/* Middle horizontal line */}
+              <line x1="-60" y1="0" x2="60" y2="0" stroke="#D4AF37" strokeWidth="2.5"/>
+              
+              {/* Bottom facets */}
+              <line x1="-60" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="60" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="-30" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
+              <line x1="30" y1="0" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
+              
+              {/* Center vertical line */}
+              <line x1="0" y1="-60" x2="0" y2="90" stroke="#D4AF37" strokeWidth="2"/>
+              
+              {/* Top inner lines */}
+              <line x1="-30" y1="0" x2="0" y2="-60" stroke="#D4AF37" strokeWidth="1.5"/>
+              <line x1="30" y1="0" x2="0" y2="-60" stroke="#D4AF37" strokeWidth="1.5"/>
+            </g>
+
+            {/* VERONA text */}
+            <text 
+              x="250" 
+              y="240" 
+              textAnchor="middle" 
+              fill="#D4AF37"
+              fontSize="82"
+              fontWeight="400"
+              fontFamily="'Playfair Display', serif"
+              letterSpacing="8"
+            >
+              VERONA
+            </text>
+
+            {/* Left decorative line */}
+            <line 
+              x1="45" 
+              y1="285" 
+              x2="165" 
+              y2="285" 
+              stroke="#D4AF37" 
+              strokeWidth="2"
+            />
+
+            {/* JOYAS text */}
+            <text 
+              x="250" 
+              y="295" 
+              textAnchor="middle" 
+              fill="#D4AF37"
+              fontSize="32"
+              fontWeight="400"
+              fontFamily="'Montserrat', sans-serif"
+              letterSpacing="12"
+            >
+              JOYAS
+            </text>
+
+            {/* Right decorative line */}
+            <line 
+              x1="335" 
+              y1="285" 
+              x2="455" 
+              y2="285" 
+              stroke="#D4AF37" 
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
 
         {/* Subtitle */}
         <p 
-          className="text-lg  sm:text-xl md:text-2xl font-light text-white tracking-[0.2em]"
+          className="text-lg sm:text-xl md:text-2xl font-light text-white tracking-[0.2em]"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           BIJOUTERIE & ACCESORIOS
