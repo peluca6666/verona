@@ -29,6 +29,12 @@ export const createProductSchema = z.object({
     .optional(),
   
   is_active: z.boolean()
+    .optional(),
+
+
+  stock: z.number()
+    .int("Stock must be an integer")
+    .min(0, "Stock cannot be negative")
     .optional()
 });
 
@@ -64,5 +70,10 @@ export const updateProductSchema = z.object({
     .optional(),
   
   is_active: z.boolean()
+    .optional(),
+
+  stock: z.number()
+    .int("Stock must be an integer")
+    .min(0, "Stock cannot be negative")
     .optional()
 });
