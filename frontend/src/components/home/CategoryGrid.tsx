@@ -82,7 +82,7 @@ export default function CategoryGrid({ className = '' }: CategoryGridProps) {
             className="text-gray-600 text-base sm:text-lg font-light tracking-[0.05em] max-w-2xl mx-auto px-4"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
-            Descubre la elegancia atemporal en cada una de nuestras cuidadosamente curadas colecciones
+            Descubre la elegancia en cada una de nuestras colecciones
           </p>
         </div>
 

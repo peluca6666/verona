@@ -36,7 +36,7 @@ export default function ProductDetailPage() {
 
 const handleWhatsAppInquiry = () => {
   const phoneNumber = "5493546515266";
-  const productUrl = `${window.location.origin}/product/${product?.id}`;
+  const productUrl = `${window.location.origin}/product/${product?.SLUG}`;
   const message = `¡Hola! Me interesa este producto:\n\n📦 *${product?.name}*\n💰 Precio: $${product?.price.toLocaleString()}\n🔗 Ver producto: ${productUrl}\n\n¿Podrían brindarme más información?`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
