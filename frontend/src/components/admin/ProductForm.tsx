@@ -25,6 +25,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
     primary_image: product?.primary_image || '',
     images: product?.images?.join(', ') || '',
     is_active: product?.is_active ?? true,
+    stock: product?.stock || 0,
   });
 
   useEffect(() => {
@@ -48,6 +49,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
         ...formData,
         price: Number(formData.price),
         category_id: Number(formData.category_id),
+        stock: Number(formData.stock),
         images: formData.images ? formData.images.split(',').map(url => url.trim()).filter(Boolean) : [],
       };
 
@@ -129,6 +131,22 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
               onChange={(e) => setFormData({ ...formData, material: e.target.value })}
               className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base text-gray-900"
             />
+          </div>
+          {/* Added Stock Input Field */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
+              Stock Available
+            </label>
+            <input
+              type="number"
+              required
+              min="0"
+              value={formData.stock}
+              onChange={(e) => setFormData({ ...formData, stock: Number(e.target.value) })}
+              className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base text-gray-900 font-medium"
+              placeholder="0"
+            />
+            <p className="text-xs text-gray-500 mt-2">Number of units available in stock</p>
           </div>
 
           <div>

@@ -106,9 +106,8 @@ export default function ProductsTab() {
               <div className="mb-4">
                 <div className="flex justify-between items-start gap-3 mb-2">
                   <h3 className="font-semibold text-lg text-gray-900 leading-tight">{product.name}</h3>
-                  <span className={`text-xs font-medium px-3 py-1.5 rounded-full whitespace-nowrap ${
-                    product.is_active ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'
-                  }`}>
+                  <span className={`text-xs font-medium px-3 py-1.5 rounded-full whitespace-nowrap ${product.is_active ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'
+                    }`}>
                     {product.is_active ? 'Active' : 'Inactive'}
                   </span>
                 </div>
@@ -117,6 +116,22 @@ export default function ProductsTab() {
                   <p className="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-md inline-block">{product.material}</p>
                 )}
               </div>
+
+              {/* Stock */}
+              <div className="flex items-center gap-2 mb-2">
+                <span className={`text-sm font-medium px-3 py-1 rounded-full ${product.stock > 10
+                    ? 'bg-green-100 text-green-700'
+                    : product.stock > 0
+                      ? 'bg-yellow-100 text-yellow-700'
+                      : 'bg-red-100 text-red-700'
+                  }`}>
+                  Stock: {product.stock}
+                </span>
+              </div>
+
+              {product.material && (
+                <p className="text-sm text-gray-600 bg-gray-50 px-3 py-1.5 rounded-md inline-block">{product.material}</p>
+              )}
 
               <div className="flex gap-3 pt-3 border-t border-gray-100">
                 <button
@@ -127,9 +142,8 @@ export default function ProductsTab() {
                 </button>
                 <button
                   onClick={() => handleToggleActive(product)}
-                  className={`flex-1 px-4 py-2.5 rounded-lg font-medium text-sm transition ${
-                    product.is_active ? 'bg-red-50 text-red-700 hover:bg-red-100' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
-                  }`}
+                  className={`flex-1 px-4 py-2.5 rounded-lg font-medium text-sm transition ${product.is_active ? 'bg-red-50 text-red-700 hover:bg-red-100' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+                    }`}
                 >
                   {product.is_active ? 'Disable' : 'Enable'}
                 </button>

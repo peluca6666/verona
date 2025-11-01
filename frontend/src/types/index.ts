@@ -9,6 +9,7 @@ export interface Product {
   primary_image: string | null;
   images: string[] | null;
   is_active: boolean;
+  stock: number;
   created_at: string;
   updated_at: string;
 }

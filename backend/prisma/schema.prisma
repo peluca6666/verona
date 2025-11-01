@@ -36,6 +36,7 @@ model product {
   primary_image String   @db.VarChar(256)
   images        Json?  
   is_active     Boolean
+  stock         Int      @default(0)
   created_at    DateTime @default(now()) @db.Timestamp(0)
   updated_at    DateTime @default(now()) @db.Timestamp(0)
   category_id   Int
