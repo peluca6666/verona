@@ -58,8 +58,8 @@ export function getToken(): string | null {
 }
 
 // function to get product by id
-export async function getProductById(id: string) {
-    const response = await apiRequest<{ success: boolean, data: Product }>(`/products/${id}`);
+export async function getProductBySlug(slug: string) {
+    const response = await apiRequest<{ success: boolean, data: Product }>(`/products/slug/${slug}`);
     return response.data;
 }
 

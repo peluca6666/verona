@@ -9,7 +9,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const defaultImage = 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop';
 
   return (
-    <Link href={`/product/${product.id}`} className="group block">
+    <Link href={`/product/${product.slug || product.id}`} className="group block">
       <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-amber-200 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
         
         {/* primary image */}

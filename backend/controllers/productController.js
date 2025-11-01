@@ -125,6 +125,32 @@ async getProductById(req, res) {
         }
     }
 
+    async getProductBySlug(req, res) {
+    try {
+        const { slug } = req.params;
+        const product = await productService.getProductBySlug(slug);
+        
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: 'Product not found'
+            });
+        }
+        
+        res.status(200).json({
+            success: true,
+            data: product
+        });
+    } catch (error) {
+        console.error('Error in getProductBySlug:', error.message);
+        res.status(500).json({
+            success: false,
+            message: 'Could not fetch product'
+        });
+    }
 }
+
+}
+
 
 export default new ProductController();

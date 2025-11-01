@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { Product } from '@/types';
-import { getProductById } from '@/lib/api';
+import { getProductBySlug } from '@/lib/api';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
@@ -22,7 +22,7 @@ export default function ProductDetailPage() {
 
     async function fetchProduct() {
       try {
-        const data = await getProductById(id);
+         const data = await getProductBySlug(id);
         setProduct(data);
       } catch (err) {
         setError('Producto no encontrado');

@@ -194,6 +194,30 @@ async getProductById(id) {
         throw error;
     }
 }
+
+async getProductBySlug(slug) {
+    try {
+        const product = await prisma.product.findFirst({
+            where: { 
+                slug: slug,
+                is_active: true 
+            },
+            include: {
+                category: true
+            }
+        });
+        
+        if (!product) {
+            throw new Error('Product not found');
+        }
+        
+        return product;
+    } catch (error) {
+        console.error('Error fetching product by slug:', error.message);
+        throw error;
+    }
+}
+
 }
 
 export default new ProductService();
