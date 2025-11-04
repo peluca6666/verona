@@ -20,7 +20,7 @@ export default function AdminPage() {
               activeTab === 'products' ? 'text-amber-600' : 'text-gray-500 hover:text-gray-700'
             }`}
           >
-            Products
+            Productos
             {activeTab === 'products' && (
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600" />
             )}
@@ -31,7 +31,7 @@ export default function AdminPage() {
               activeTab === 'categories' ? 'text-amber-600' : 'text-gray-500 hover:text-gray-700'
             }`}
           >
-            Categories
+            Categorias
             {activeTab === 'categories' && (
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600" />
             )}

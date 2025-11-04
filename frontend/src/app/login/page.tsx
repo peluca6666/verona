@@ -42,7 +42,7 @@ export default function LoginPage() {
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        <span className="font-medium">Back to Home</span>
+        <span className="font-medium">Volver a la página principal</span>
       </Link>
 
       <div className="bg-white p-10 rounded-2xl shadow-xl max-w-md w-full border border-gray-100">
@@ -56,9 +56,9 @@ export default function LoginPage() {
           className="text-4xl font-light text-gray-900 mb-2 text-center"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
-          Admin Panel
+         Panel de Administración
         </h1>
-        <p className="text-center text-gray-600 mb-8">Sign in to manage your store</p>
+        <p className="text-center text-gray-600 mb-8">Inicia sesión para administrar el sitio</p>
         
         {/* Error Message */}
         {error && (
@@ -79,13 +79,13 @@ export default function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 transition-all text-base text-gray-900 placeholder-gray-400"
-              placeholder="admin@example.com"
+              placeholder="admin@ejemplo.com"
             />
           </div>
 
           <div>
             <label className="block text-base font-medium text-gray-900 mb-2">
-              Password
+              Contraseña
             </label>
             <input
               type="password"
@@ -102,7 +102,7 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full px-5 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-opacity-50"
           >
-            {loading ? 'Loading...' : 'Log in'}
+            {loading ? 'Cargando...' : 'Iniciar Sesión'}
           </button>
         </form>
       </div>
