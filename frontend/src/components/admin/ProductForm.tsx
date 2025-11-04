@@ -34,7 +34,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
         const data = await getCategories();
         setCategories(data);
       } catch (err) {
-        toast.error('Error loading categories');
+        toast.error('Error cargando categorias');
       }
     }
     fetchCategories();
@@ -54,9 +54,9 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
       };
 
       await onSave(dataToSend);
-      toast.success(product ? 'Updated' : 'Created');
+      toast.success(product ? 'Actualizado' : 'Creado');
     } catch (err) {
-      toast.error('Error saving');
+      toast.error('Error guardando el producto');
     } finally {
       setLoading(false);
     }
@@ -68,7 +68,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
 
         <div className="px-8 py-6 border-b bg-gradient-to-r from-amber-50 to-white">
           <h2 className="text-3xl font-light text-gray-900" style={{ fontFamily: 'Playfair Display, serif' }}>
-            {product ? 'Edit Product' : 'New Product'}
+            {product ? 'Editar producto' : 'Nuevo producto'}
           </h2>
         </div>
 
@@ -76,7 +76,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
 
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-              Product Name
+              Nombre del producto
             </label>
             <input
               type="text"
@@ -90,7 +90,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-                Price
+                Precio
               </label>
               <input
                 type="number"
@@ -105,7 +105,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
 
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-                Category
+                Categoria
               </label>
               <select
                 required
@@ -113,7 +113,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
                 onChange={(e) => setFormData({ ...formData, category_id: Number(e.target.value) })}
                 className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base bg-white text-gray-900 font-medium"
               >
-                <option value="">Select...</option>
+                <option value="">Seleccionar...</option>
                 {categories.map((cat) => (
                   <option key={cat.id} value={cat.id}>{cat.name}</option>
                 ))}
@@ -132,10 +132,9 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
               className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base text-gray-900"
             />
           </div>
-          {/* Added Stock Input Field */}
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-              Stock Available
+              Stock disponible
             </label>
             <input
               type="number"
@@ -146,12 +145,12 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
               className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base text-gray-900 font-medium"
               placeholder="0"
             />
-            <p className="text-xs text-gray-500 mt-2">Number of units available in stock</p>
+            <p className="text-xs text-gray-500 mt-2">Numero de unidades disponibles en stock</p>
           </div>
 
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-              Description
+              Descripción
             </label>
             <textarea
               rows={4}
@@ -164,7 +163,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
           {/* Primary Image Upload */}
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-              Primary Image
+              Imagen principal
             </label>
             <FileUploaderRegular
               pubkey="ad23bee013f24377c6c9"
@@ -189,7 +188,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
           {/* Additional Images */}
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-              Additional Images
+              Imagenes adicionales
             </label>
             <FileUploaderRegular
               pubkey="ad23bee013f24377c6c9"
@@ -203,11 +202,11 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
                   const currentImages = formData.images ? formData.images.split(',').map(url => url.trim()) : [];
                   currentImages.push(file.cdnUrl);
                   setFormData({ ...formData, images: currentImages.join(', ') });
-                  toast.success('Image added!');
+                  toast.success('Imagen añadida!');
                 }
               }}
             />
-            <p className="text-xs text-gray-500 mt-2">Upload multiple images</p>
+            <p className="text-xs text-gray-500 mt-2">Subir multiples imagenes</p>
             {formData.images && (
               <div className="mt-2 flex gap-2 flex-wrap">
                 {formData.images.split(',').map((url, i) => (
@@ -234,7 +233,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
             onClick={onCancel}
             className="flex-1 px-6 py-3.5 text-gray-700 hover:bg-gray-200 rounded-xl transition font-medium text-base"
           >
-            Cancel
+            Cancelar
           </button>
           <button
             type="submit"
@@ -242,7 +241,7 @@ export default function ProductForm({ product, onSave, onCancel }: ProductFormPr
             onClick={handleSubmit}
             className="flex-1 px-6 py-3.5 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white rounded-xl transition font-medium text-base shadow-lg disabled:opacity-50"
           >
-            {loading ? 'Saving...' : 'Save Product'}
+            {loading ? 'Guardando...' : 'Guardar producto'}
           </button>
         </div>
       </div>

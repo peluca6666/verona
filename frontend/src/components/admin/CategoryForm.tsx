@@ -34,12 +34,12 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
     e.preventDefault();
 
     if (!formData.name.trim()) {
-      toast.error('Category name is required');
+      toast.error('Nombre de la categoría es requerido');
       return;
     }
 
     if (!formData.image.trim()) {
-      toast.error('Category image is required');
+      toast.error('Imagen de la categoría es requerida');
       return;
     }
 
@@ -50,9 +50,9 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
         image: formData.image.trim(),
         is_active: formData.is_active,
       });
-      toast.success(category ? 'Category updated!' : 'Category created!');
+      toast.success(category ? 'Categoria actualizada!' : 'Categoria creada!');
     } catch (error) {
-      toast.error(category ? 'Error updating category' : 'Error creating category');
+      toast.error(category ? 'Error actualizando categoría' : 'Error creando categoría');
     } finally {
       setLoading(false);
     }
@@ -65,7 +65,7 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
         {/* Header */}
         <div className="px-8 py-6 border-b bg-gradient-to-r from-amber-50 to-white">
           <h2 className="text-3xl font-light text-gray-900" style={{ fontFamily: 'Playfair Display, serif' }}>
-            {category ? 'Edit Category' : 'New Category'}
+            {category ? 'Editar Categoría' : 'Nueva Categoría'}
           </h2>
         </div>
 
@@ -75,7 +75,7 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
           {/* Name */}
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-              Category Name
+              Nombre de la categoría
             </label>
             <input
               type="text"
@@ -83,14 +83,14 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base text-gray-900 font-medium"
-              placeholder="e.g., Anillos, Collares, Pulseras"
+              placeholder="Ej., Anillos, Collares, Pulseras"
             />
           </div>
 
           {/* Image Upload */}
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
-              Category Image
+              Imagen de la categoría
             </label>
             <FileUploaderRegular
               pubkey="ad23bee013f24377c6c9"
@@ -101,7 +101,7 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
               onFileUploadSuccess={(file: any) => {
                 if (file?.cdnUrl) {
                   setFormData({ ...formData, image: file.cdnUrl });
-                  toast.success('Image uploaded!');
+                  toast.success('Imageen cargada!');
                 }
               }}
             />
@@ -110,7 +110,7 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
                 <p className="text-xs text-gray-500 mb-2">Preview:</p>
                 <img 
                   src={formData.image} 
-                  alt="Category preview" 
+                  alt="Vista previa de la categoría" 
                   className="w-full h-48 object-cover rounded-lg border-2 border-gray-200" 
                 />
               </div>
@@ -125,7 +125,7 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
               onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
               className="w-5 h-5 text-amber-600 rounded"
             />
-            <span className="text-base font-medium text-gray-900">Active and visible to customers</span>
+            <span className="text-base font-medium text-gray-900">Activo y visible en la tienda</span>
           </label>
         </form>
 
@@ -137,7 +137,7 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
             className="flex-1 px-6 py-3.5 text-gray-700 hover:bg-gray-200 rounded-xl transition font-medium text-base"
             disabled={loading}
           >
-            Cancel
+            Cancelar
           </button>
           <button
             type="submit"
@@ -145,7 +145,7 @@ export default function CategoryForm({ category, onSave, onCancel }: CategoryFor
             onClick={handleSubmit}
             className="flex-1 px-6 py-3.5 bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white rounded-xl transition font-medium text-base shadow-lg disabled:opacity-50"
           >
-            {loading ? 'Saving...' : (category ? 'Update Category' : 'Create Category')}
+            {loading ? 'Guardando...' : (category ? 'Actualizar Categoría' : 'Crear Categoría')}
           </button>
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function CategoriesTab() {
       const response = await getCategoriesForAdmin();
       setCategories(response.data);
     } catch (err) {
-      toast.error('Error loading categories');
+      toast.error('Error cargando categorias');
     } finally {
       setLoading(false);
     }
@@ -32,10 +32,10 @@ export default function CategoriesTab() {
   async function handleToggleActive(category: Category) {
     try {
       await updateCategory(category.id, { is_active: !category.is_active });
-      toast.success(category.is_active ? 'Category deactivated' : 'Category activated');
+      toast.success(category.is_active ? 'Categoria desactivada' : 'Categoria activada');
       fetchCategories();
     } catch (err) {
-      toast.error('Error updating category');
+      toast.error('Error actualizando la categoría');
     }
   }
 
@@ -59,7 +59,7 @@ export default function CategoriesTab() {
   );
 
   if (loading) {
-    return <div className="text-center py-20 text-lg text-gray-600">Loading categories...</div>;
+    return <div className="text-center py-20 text-lg text-gray-600">Cargando categorias...</div>;
   }
 
   return (
@@ -68,22 +68,22 @@ export default function CategoriesTab() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <div>
           <h1 className="text-4xl font-light text-gray-900 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Categories
+            Categorias
           </h1>
-          <p className="text-lg text-gray-600">{filtered.length} categories</p>
+          <p className="text-lg text-gray-600">{filtered.length} categorias</p>
         </div>
         <button
           onClick={() => { setEditingCategory(null); setShowForm(true); }}
           className="px-8 py-3 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-medium rounded-lg transition-all"
         >
-          + New Category
+          + Nueva Categoría
         </button>
       </div>
 
       {/* Search */}
       <input
         type="text"
-        placeholder="Search categories..."
+        placeholder="Busca una categoría..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="w-full px-5 py-3.5 mb-8 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base transition"
@@ -98,7 +98,7 @@ export default function CategoriesTab() {
                 <img src={category.image} alt={category.name} className="w-full h-48 object-cover rounded-lg mb-4" />
               ) : (
                 <div className="w-full h-48 bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">No image</span>
+                  <span className="text-gray-400 text-sm">Sin imagen</span>
                 </div>
               )}
 
@@ -108,7 +108,7 @@ export default function CategoriesTab() {
                   <span className={`text-xs font-medium px-3 py-1.5 rounded-full whitespace-nowrap ${
                     category.is_active ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'
                   }`}>
-                    {category.is_active ? 'Active' : 'Inactive'}
+                    {category.is_active ? 'Activo' : 'Inactivo'}
                   </span>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function CategoriesTab() {
                   onClick={() => { setEditingCategory(category); setShowForm(true); }}
                   className="flex-1 px-4 py-2.5 bg-amber-50 text-amber-700 rounded-lg hover:bg-amber-100 font-medium text-sm transition"
                 >
-                  Edit
+                  Editar
                 </button>
                 <button
                   onClick={() => handleToggleActive(category)}
@@ -127,7 +127,7 @@ export default function CategoriesTab() {
                     category.is_active ? 'bg-red-50 text-red-700 hover:bg-red-100' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
                   }`}
                 >
-                  {category.is_active ? 'Disable' : 'Enable'}
+                  {category.is_active ? 'Desactivar' : 'Activar'}
                 </button>
               </div>
             </div>

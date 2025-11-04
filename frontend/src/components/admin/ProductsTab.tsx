@@ -32,10 +32,10 @@ export default function ProductsTab() {
   async function handleToggleActive(product: Product) {
     try {
       await updateProduct(product.id, { is_active: !product.is_active });
-      toast.success(product.is_active ? 'Product deactivated' : 'Product activated');
+      toast.success(product.is_active ? 'Producto desactivado' : 'Producto activado');
       fetchProducts();
     } catch (err) {
-      toast.error('Error updating product');
+      toast.error('Error actualizando el producto');
     }
   }
 
@@ -60,7 +60,7 @@ export default function ProductsTab() {
   );
 
   if (loading) {
-    return <div className="text-center py-20 text-lg text-gray-600">Loading products...</div>;
+    return <div className="text-center py-20 text-lg text-gray-600">Cargando productos...</div>;
   }
 
   return (
@@ -69,22 +69,22 @@ export default function ProductsTab() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <div>
           <h1 className="text-4xl font-light text-gray-900 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Products
+            Productos
           </h1>
-          <p className="text-lg text-gray-600">{filtered.length} products</p>
+          <p className="text-lg text-gray-600">{filtered.length} productos</p>
         </div>
         <button
           onClick={() => { setEditingProduct(null); setShowForm(true); }}
           className="px-8 py-3 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white font-medium rounded-lg transition-all"
         >
-          + New Product
+          + Nuevo producto
         </button>
       </div>
 
       {/* Search */}
       <input
         type="text"
-        placeholder="Search by name or material..."
+        placeholder="Buscar por nombre o material..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="w-full px-5 py-3.5 mb-8 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-amber-500 text-base transition"
@@ -99,7 +99,7 @@ export default function ProductsTab() {
                 <img src={product.primary_image} alt={product.name} className="w-full h-48 object-cover rounded-lg mb-4" />
               ) : (
                 <div className="w-full h-48 bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">No image</span>
+                  <span className="text-gray-400 text-sm">Sin imagen</span>
                 </div>
               )}
 
@@ -108,7 +108,7 @@ export default function ProductsTab() {
                   <h3 className="font-semibold text-lg text-gray-900 leading-tight">{product.name}</h3>
                   <span className={`text-xs font-medium px-3 py-1.5 rounded-full whitespace-nowrap ${product.is_active ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-600'
                     }`}>
-                    {product.is_active ? 'Active' : 'Inactive'}
+                    {product.is_active ? 'Activeo' : 'Inactivo'}
                   </span>
                 </div>
                 <p className="text-2xl font-bold text-amber-600 mb-2">${product.price.toLocaleString()}</p>
@@ -138,14 +138,14 @@ export default function ProductsTab() {
                   onClick={() => { setEditingProduct(product); setShowForm(true); }}
                   className="flex-1 px-4 py-2.5 bg-amber-50 text-amber-700 rounded-lg hover:bg-amber-100 font-medium text-sm transition"
                 >
-                  Edit
+                  Editar
                 </button>
                 <button
                   onClick={() => handleToggleActive(product)}
                   className={`flex-1 px-4 py-2.5 rounded-lg font-medium text-sm transition ${product.is_active ? 'bg-red-50 text-red-700 hover:bg-red-100' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
                     }`}
                 >
-                  {product.is_active ? 'Disable' : 'Enable'}
+                  {product.is_active ? 'Deshabilitar' : 'Habilitar'}
                 </button>
               </div>
             </div>
@@ -153,8 +153,8 @@ export default function ProductsTab() {
         </div>
       ) : (
         <div className="text-center py-24 bg-white rounded-xl border-2 border-dashed border-gray-300">
-          <p className="text-xl text-gray-600 mb-2">{search ? 'No products found' : 'No products yet'}</p>
-          <p className="text-base text-gray-500">{search ? 'Try a different search term' : 'Create your first product to get started'}</p>
+          <p className="text-xl text-gray-600 mb-2">{search ? 'No se encontraron productos' : 'Aún no tienes productos'}</p>
+          <p className="text-base text-gray-500">{search ? 'Intenta con otra palabra' : 'Crea tu primer producto'}</p>
         </div>
       )}
 
